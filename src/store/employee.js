@@ -3,16 +3,7 @@ import employeeApi from "@/api/employee";
 export default {
 	state: {
 		employeeList: [],
-		currentEmployee: {
-			firstName: "",
-			lastName: "",
-			gender: "",
-			birthday: "",
-			address: "",
-			email: "",
-			contactNumber: "",
-			applicationPurpose: "",
-		},
+		currentEmployee: {},
 	},
 	mutations: {
 		setEmployeeList(state, payload) {
