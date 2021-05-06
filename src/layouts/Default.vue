@@ -6,7 +6,9 @@
 			</strong>
 			<nav class="nav">
 				<g-link class="nav__link" to="/">Home</g-link>
-				<g-link class="nav__link" to="/about/">Registration</g-link>
+				<g-link class="nav__link" to="/registration/"
+					>Registration</g-link
+				>
 			</nav>
 		</header>
 		<slot />
@@ -22,9 +24,9 @@ query {
 </static-query>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 body {
-	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-		Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-family: "Poppins", sans-serif !important;
 	margin: 0;
 	padding: 0;
 	line-height: 1.5;
