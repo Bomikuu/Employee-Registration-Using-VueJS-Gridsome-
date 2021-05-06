@@ -10,6 +10,7 @@
 						<div
 							v-for="(field, index) in getCurrentForm.form"
 							:key="`form-input-${index}`"
+							class="form-input-item"
 							:class="{ 'full-field': field.isFull }"
 						>
 							<input-field
@@ -256,22 +257,34 @@ export default {
 		},
 
 		async handleSubmitApplication() {
-			let response = null;
 			this.isLoading = true;
 			const payload = this.getPayload(0);
 			console.log("payload is", payload);
 			try {
-				// response = await employeeAPI.saveEmployee(payload);
+				await employeeAPI.saveEmployee(payload);
 			} catch (error) {
 				console.log(error);
 			} finally {
 				console.log("Employee successfully created.");
+				this.handlePostCompany();
+			}
+		},
+
+		async handlePostCompany() {
+			const payload = this.getPayload(1);
+			console.log("payload is for company", payload);
+			try {
+				await employeeAPI.saveCompany(payload);
+			} catch (error) {
+				console.log(error);
+			} finally {
+				console.log("Company successfully created.");
 				setTimeout(() => {
 					this.isLoading = false;
-				}, 10000);
+					this.$store.commit("setStepperIndex", 0);
+					this.$router.push("/result");
+				}, 3000);
 			}
-
-			return response;
 		},
 
 		getPayload(index) {
@@ -297,7 +310,7 @@ export default {
 	flex-wrap: wrap;
 	margin-bottom: 1em;
 
-	& > * {
+	.form-input-item {
 		flex: 0 0 48%;
 		margin-top: 1.5em;
 		margin-right: auto;
@@ -306,6 +319,12 @@ export default {
 	.full-field {
 		flex: 0 0 96%;
 		margin-right: 5px;
+	}
+}
+
+@media (max-width: 550px) {
+	.form-input-item {
+		flex: 0 0 96% !important;
 	}
 }
 
