@@ -37,7 +37,7 @@ export default {
 					purpose,
 					companyRole,
 				} = response.data;
-				console.log(response);
+
 				commit("setGender", gender);
 				commit("setCompanyRole", companyRole);
 				commit("setLoginRole", loginRole);
