@@ -8,7 +8,7 @@
 					class="mt-4"
 					type="submit"
 					variant="primary"
-					@click="$router.push('/')"
+					@click="goToHome"
 					>Go To Home
 				</b-button>
 			</div>
@@ -17,7 +17,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+	methods: {
+		goToHome() {
+			window.location = "/";
+		},
+	},
+};
 </script>
 
 <style lang="scss">
