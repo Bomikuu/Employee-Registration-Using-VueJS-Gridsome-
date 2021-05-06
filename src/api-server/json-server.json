@@ -32,15 +32,6 @@
 			"companySuperVisor": ""
 		}
 	],
-
-	"loginDetails": [
-		{
-			"userId": "",
-			"username": "",
-			"password": "",
-			"role": ""
-		}
-	],
 	"values": {
 		"gender": ["Male", "Female", "Bisexual", "Transgender", "Others"],
 		"companyRole": [
