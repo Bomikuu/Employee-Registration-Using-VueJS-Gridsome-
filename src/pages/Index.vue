@@ -45,8 +45,6 @@ export default {
 			this.$store.dispatch("getAllEmployee"),
 		]);
 
-		console.log(response);
-
 		if (response) {
 			this.isLoading = false;
 		}
