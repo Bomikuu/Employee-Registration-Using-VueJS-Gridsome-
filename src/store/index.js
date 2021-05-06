@@ -6,8 +6,14 @@ import values from "./values";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-	state: {},
-	mutations: {},
+	state: {
+		stepperIndex: 0,
+	},
+	mutations: {
+		setStepperIndex(state, index) {
+			state.stepperIndex = index;
+		},
+	},
 	actions: {},
 	modules: {
 		employee,
