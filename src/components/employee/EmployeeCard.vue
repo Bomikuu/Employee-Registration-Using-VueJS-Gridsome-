@@ -96,4 +96,21 @@ export default {
 		}
 	}
 }
+
+@media (max-width:960px) {
+    .employee-outer-container {
+        flex: 0 0 50%;
+        max-width: 50%;
+        min-width: 50%;
+    }
+}
+
+@media (max-width:550px) {
+    .employee-outer-container {
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
 </style>
