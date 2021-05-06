@@ -42,6 +42,7 @@
 
 <script>
 import startCase from "lodash/startCase";
+
 export default {
 	props: {
 		employee: {
@@ -63,6 +64,8 @@ export default {
 <style lang="scss">
 .employee-outer-container {
 	flex: 0 0 33.33%;
+    max-width: 33.33%;
+    min-width: 33.33%;
 
 	.employee-card-container {
 		width: 90%;
