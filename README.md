@@ -11,7 +11,7 @@ This project contains the following technology:
 
 ### 1. Clone the Project
 
-1. `git clone https://github.com/Bomikuu/UserRegistration.git`
+1. `git clone https://github.com/Bomikuu/Employee-Registration-Using-VueJS-Gridsome-.git`
 
 ### 2. Setting up the Project
 
