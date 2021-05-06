@@ -1,0 +1,56 @@
+{
+	"employees": [
+		{
+			"id": 1,
+			"firstName": "Mico",
+			"lastName": "Ang",
+			"gender": "Male",
+			"birthday": "07/02/1998",
+			"address": "Davao City",
+			"email": "mico.dahang@gmail.com",
+			"contactNumber": "09994827961",
+			"applicationPurpose": "Entertainment"
+		},
+		{
+			"id": 2,
+			"firstName": "Eryk",
+			"lastName": "Stefano",
+			"gender": "Others",
+			"birthday": "04/30/1995",
+			"address": "Tagum City",
+			"email": "egoy.stefano@gmail.com",
+			"contactNumber": "0999482791",
+			"applicationPurpose": "Training"
+		},
+		{
+			"id": 3,
+			"firstName": "Ryo",
+			"lastName": "Amakusa",
+			"gender": "Male",
+			"birthday": "04/30/1995",
+			"address": "Japan City",
+			"email": "egoy.stefano@gmail.com",
+			"contactNumber": "0999482791",
+			"applicationPurpose": "Leisure"
+		}
+	],
+	"company": [],
+	"values": {
+		"gender": ["Male", "Female", "Bisexual", "Transgender", "Others"],
+		"companyRole": [
+			"Sales Man",
+			"Software Engineer",
+			"Manager",
+			"Team Leader",
+			"Quality Assurance"
+		],
+		"loginRole": ["Administrator", "Editor", "Viewer", "Guest"],
+		"purpose": [
+			"Entertainment",
+			"Leisure",
+			"Information",
+			"Training",
+			"Others"
+		]
+	}
+}
