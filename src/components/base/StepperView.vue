@@ -5,6 +5,7 @@
 			:class="{ active: isIndexSelected(index) }"
 			:key="`stepper-${index}`"
 			:id="step.id"
+			@click="moveStepper(index)"
 		>
 			<strong>{{ step.title }}</strong>
 		</li>
@@ -13,13 +14,6 @@
 
 <script>
 export default {
-	props: {
-		stepperIndex: {
-			default: 0,
-			type: Number,
-		},
-	},
-
 	data() {
 		return {
 			stepperList: [
@@ -39,9 +33,47 @@ export default {
 		};
 	},
 
+	computed: {
+		getStepperIndex() {
+			return this.$store.state.stepperIndex;
+		},
+	},
+
+	mounted() {
+		this.$root.$on("handleNextStep", () => {
+			this.handleMoveStepper();
+		});
+
+		this.$root.$on("handlePreviousStep", () => {
+			this.handlePreviousStepper();
+		});
+	},
+
 	methods: {
 		isIndexSelected(index) {
-			return index === this.stepperIndex;
+			return index === this.getStepperIndex;
+		},
+
+		moveStepper(index) {
+			this.$store.commit("setStepperIndex", index);
+		},
+
+		handleMoveStepper() {
+			const value = this.getStepperIndex + 1;
+			this.$store.commit("setStepperIndex", value);
+		},
+
+		handlePreviousStepper() {
+			const value = this.getStepperIndex - 1;
+			this.$store.commit("setStepperIndex", value);
+		},
+
+		getClickFunction(index) {
+			if (index === 0 || index === this.stepperList.length - 1) {
+				this.handleMoveStepper();
+			} else if (index !== 0) {
+				this.handlePreviousStepper();
+			}
 		},
 	},
 };
