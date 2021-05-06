@@ -229,6 +229,8 @@ export default {
 	created() {},
 
 	async mounted() {
+		this.$store.commit("setStepperIndex", 0);
+
 		const response = await this.$store.dispatch("getAllValues");
 
 		if (response) {
@@ -259,7 +261,7 @@ export default {
 		async handleSubmitApplication() {
 			this.isLoading = true;
 			const payload = this.getPayload(0);
-			console.log("payload is", payload);
+
 			try {
 				await employeeAPI.saveEmployee(payload);
 			} catch (error) {
@@ -272,7 +274,6 @@ export default {
 
 		async handlePostCompany() {
 			const payload = this.getPayload(1);
-			console.log("payload is for company", payload);
 			try {
 				await employeeAPI.saveCompany(payload);
 			} catch (error) {
@@ -281,7 +282,6 @@ export default {
 				console.log("Company successfully created.");
 				setTimeout(() => {
 					this.isLoading = false;
-					this.$store.commit("setStepperIndex", 0);
 					this.$router.push("/result");
 				}, 3000);
 			}

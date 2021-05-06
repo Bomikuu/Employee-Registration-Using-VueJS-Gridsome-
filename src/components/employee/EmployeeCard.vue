@@ -30,8 +30,8 @@
 						<ul>
                             <li> Birthday: {{ employee.birthday}}</li>
                             <li> Contact Number: {{ employee.contactNumber}}</li>
-                            <li> Contact Number: {{ employee.email}}</li>
-                            <li> Contact Number: {{ employee.address}}</li>
+                            <li> Email Address: {{ employee.email}}</li>
+                            <li> Address: {{ employee.address}}</li>
                         </ul>
 					</p>
 				</div>
@@ -41,8 +41,6 @@
 </template>
 
 <script>
-import startCase from "lodash/startCase";
-
 export default {
 	props: {
 		employee: {
